@@ -112,6 +112,7 @@ if is_sentencepiece_available():
     from ..deberta_v2.tokenization_deberta_v2 import DebertaV2Tokenizer
     from ..marian.tokenization_marian import MarianTokenizer
     from ..mbart.tokenization_mbart import MBartTokenizer
+    from ..mbart.tokenization_mbart50 import MBart50Tokenizer
     from ..mt5 import MT5Tokenizer
     from ..pegasus.tokenization_pegasus import PegasusTokenizer
     from ..reformer.tokenization_reformer import ReformerTokenizer
@@ -127,6 +128,7 @@ else:
     DebertaV2Tokenizer = None
     MarianTokenizer = None
     MBartTokenizer = None
+    MBart50Tokenizer = None
     MT5Tokenizer = None
     PegasusTokenizer = None
     ReformerTokenizer = None
@@ -137,6 +139,7 @@ else:
 
 if is_tokenizers_available():
     from ..albert.tokenization_albert_fast import AlbertTokenizerFast
+    from ..bart.tokenization_bart_fast import BartTokenizerFast
     from ..bart.tokenization_bart_fast import BartTokenizerFast
     from ..barthez.tokenization_barthez_fast import BarthezTokenizerFast
     from ..bert.tokenization_bert_fast import BertTokenizerFast
@@ -153,6 +156,7 @@ if is_tokenizers_available():
     from ..longformer.tokenization_longformer_fast import LongformerTokenizerFast
     from ..lxmert.tokenization_lxmert_fast import LxmertTokenizerFast
     from ..mbart.tokenization_mbart_fast import MBartTokenizerFast
+    from ..mbart.tokenization_mbart50_fast import MBart50TokenizerFast
     from ..mobilebert.tokenization_mobilebert_fast import MobileBertTokenizerFast
     from ..mpnet.tokenization_mpnet_fast import MPNetTokenizerFast
     from ..mt5 import MT5TokenizerFast
@@ -183,6 +187,7 @@ else:
     LongformerTokenizerFast = None
     LxmertTokenizerFast = None
     MBartTokenizerFast = None
+    Mbart50TokenizerFast = None
     MobileBertTokenizerFast = None
     MPNetTokenizerFast = None
     MT5TokenizerFast = None
@@ -209,7 +214,7 @@ TOKENIZER_MAPPING = OrderedDict(
         (AlbertConfig, (AlbertTokenizer, AlbertTokenizerFast)),
         (CamembertConfig, (CamembertTokenizer, CamembertTokenizerFast)),
         (PegasusConfig, (PegasusTokenizer, PegasusTokenizerFast)),
-        (MBartConfig, (MBartTokenizer, MBartTokenizerFast)),
+        (MBartConfig, (MBart50Tokenizer, MBart50TokenizerFast)),
         (XLMRobertaConfig, (XLMRobertaTokenizer, XLMRobertaTokenizerFast)),
         (MarianConfig, (MarianTokenizer, None)),
         (BlenderbotSmallConfig, (BlenderbotSmallTokenizer, None)),
